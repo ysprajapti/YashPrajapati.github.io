@@ -615,35 +615,37 @@ footer {
 
     /* Hero adjustments */
     .hero {
-        padding-top: 100px;
-        padding-bottom: 50px;
+        padding-top: 120px;
+        /* Space for navbar */
+        padding-bottom: 60px;
+        min-height: auto;
+        /* Allow content to dictate height, preventing huge gaps */
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         text-align: center;
     }
 
     .hero-content {
-        flex-direction: column-reverse;
-        gap: 40px;
+        flex-direction: column;
+        /* Text FIRST, then Blob */
+        gap: 30px;
     }
 
     .hero-text {
         max-width: 100%;
         padding: 0 10px;
-    }
-
-    .hero-text h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-text p {
-        margin: 0 auto 30px auto;
+        order: 1;
+        /* Ensure Text is first */
     }
 
     .hero-shape {
         width: 100%;
         height: 250px;
-        margin-bottom: 20px;
+        margin-bottom: 0;
+        order: 2;
+        /* Blob second */
+        display: flex;
+        justify-content: center;
     }
 
     .blob {
@@ -655,6 +657,37 @@ footer {
         height: 250px;
         margin: 0 auto;
         filter: blur(40px);
+        opacity: 0.3;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+        margin-top: 0;
+        line-height: 1.2;
+    }
+
+    .hero-text p {
+        margin: 0 auto 30px auto;
+    }
+
+    /* Reduce general section spacing on mobile */
+    .section {
+        padding: 60px 0;
+    }
+
+    /* Ensure Section Titles are perfectly centered */
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+        width: 100%;
+        left: auto;
+        transform: none;
+        display: block;
+    }
+
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .cta-buttons {
