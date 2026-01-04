@@ -116,3 +116,32 @@ function disableLightMode() {
     themeIcon.classList.add('fa-sun');
     localStorage.setItem('theme', 'dark');
 }
+
+// Scroll Spy
+const sections = document.querySelectorAll('section, header');
+const navLi = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+
+    // Add offset for fixed header
+    const offset = 100;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= (sectionTop - offset)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLi.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href').includes(current)) {
+            a.classList.add('active');
+        }
+    });
+});
+// Trigger once on load
+document.dispatchEvent(new Event('scroll'));
