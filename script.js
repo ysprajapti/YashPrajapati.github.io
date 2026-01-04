@@ -65,7 +65,7 @@ function type() {
 
     if (isDeleting) {
         letter = currentText.slice(0, --index);
-        typeSpeed = 50; 
+        typeSpeed = 50;
     } else {
         letter = currentText.slice(0, ++index);
         typeSpeed = 150;

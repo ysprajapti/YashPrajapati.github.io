@@ -39,7 +39,7 @@ git commit -m "Initial commit - Portfolio Website"
 Copy the commands shown on the "…or push an existing repository from the command line" section. They will look like this (replace `YOUR_USERNAME` with your actual GitHub username):
 
 ```powershell
-git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
+git remote add origin https://github.com/ysprajapti/YashPrajapati.github.io
 git branch -M main
 git push -u origin main
 ```
