@@ -85,5 +85,34 @@ function type() {
     setTimeout(type, typeSpeed);
 }
 
-// Start typing effect
-document.addEventListener('DOMContentLoaded', type);
+// Theme Toggle
+const themeBtn = document.getElementById('theme-toggle');
+const body = document.body;
+const themeIcon = themeBtn.querySelector('i');
+
+// Check for saved user preference
+if (localStorage.getItem('theme') === 'light') {
+    enableLightMode();
+}
+
+themeBtn.addEventListener('click', () => {
+    if (body.classList.contains('light-mode')) {
+        disableLightMode();
+    } else {
+        enableLightMode();
+    }
+});
+
+function enableLightMode() {
+    body.classList.add('light-mode');
+    themeIcon.classList.remove('fa-sun');
+    themeIcon.classList.add('fa-moon');
+    localStorage.setItem('theme', 'light');
+}
+
+function disableLightMode() {
+    body.classList.remove('light-mode');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+    localStorage.setItem('theme', 'dark');
+}
