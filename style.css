@@ -759,7 +759,30 @@ footer {
     }
 
     .about-text {
-        text-align: center;
+        text-align: left;
+        /* Better readability */
+    }
+
+    /* Align stats in one row for 4+, 8+, 100% */
+    .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+        /* Force 3 columns */
+        gap: 10px;
+        /* Reduced gap to fit */
+    }
+
+    .stat-card {
+        padding: 15px 5px;
+        /* Compact padding */
+    }
+
+    .stat-card h3 {
+        font-size: 1.5rem;
+        /* Smaller font for mobile */
+    }
+
+    .stat-card p {
+        font-size: 0.8rem;
     }
 
     /* Contact Section Fixes */
@@ -773,20 +796,26 @@ footer {
         /* Force single line */
         text-align: left;
         gap: 12px;
-        /* Slight reduction */
         align-items: center;
         justify-content: flex-start;
         font-size: 0.9rem;
-        /* Smaller font to fit email */
+    }
+
+    /* Specific fix for Work Experience lists (make bullets stay at top) */
+    #experience .info-list li {
+        align-items: flex-start;
+    }
+
+    #experience .info-list li i {
+        margin-top: 5px;
+        /* Align icon with first line of text */
     }
 
     .info-list li i {
         width: 35px;
-        /* Smaller icon */
         height: 35px;
         font-size: 0.9rem;
         flex-shrink: 0;
-        /* Prevent icon shrinking */
     }
 
     .info-list li span,
