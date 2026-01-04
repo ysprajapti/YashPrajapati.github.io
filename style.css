@@ -756,10 +756,21 @@ footer {
         flex-direction: row;
         /* Force single line */
         text-align: left;
-        gap: 15px;
+        gap: 12px;
+        /* Slight reduction */
         align-items: center;
-        /* Align icon and text vertically */
         justify-content: flex-start;
+        font-size: 0.9rem;
+        /* Smaller font to fit email */
+    }
+
+    .info-list li i {
+        width: 35px;
+        /* Smaller icon */
+        height: 35px;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+        /* Prevent icon shrinking */
     }
 
     .info-list li span,
